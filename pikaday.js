@@ -886,7 +886,12 @@
         if (previousPikaday) {
             window.Pikaday = previousPikaday;
         } else {
-            delete window.Pikaday;
+            try {
+                delete window.Pikaday;
+            }
+            catch(e) {
+                window.Pikaday = undefined;
+            }
         }
     }
 
